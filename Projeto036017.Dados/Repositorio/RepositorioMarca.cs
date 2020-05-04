@@ -1,0 +1,17 @@
+﻿using Projeto036017.Dados.EntityFramework.Contexto;
+using Projeto036017.Dominio.Entidades;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Projeto036017.Dados.Repositorio
+{
+    public class RepositorioMarca : RepositorioBase<DominioMarca>
+    {
+        public IEnumerable<DominioMarca> ListarTodos()
+        {
+            return Contexto.DominioMarca.Where(f => f.Nome != "");
+        }
+    }
+}
